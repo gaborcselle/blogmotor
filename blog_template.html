@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+{% if post_page %} 
+<title>{{blog_settings.blogTitle}} - {{entries.0.title}}</title>
+{% else %}
+<title>{{blog_settings.blogTitle}}</title>
+{% endif %}
+<link rel="alternate" type="application/atom+xml" title="reMail Blog" href="{{blog_settings.blogUrl}}atom.xml" />
+<meta name="viewport" content="width=720;" />
+</head>
+
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+</style>
+
+<body>
+  
+<div id="blog">
+  <h1><a href="/blog/">{{blog_settings.blogTitle}}</a></h1>
+  <p>{{blog_settings.blogSubtitle}}</p>
+
+
+  <div class="blog_entries">
+    {% for entry in entries %}
+    <h2><a href="/blog/posts/{{entry.key.id}}">{{entry.title}}</a></h2>
+    <p class="date">Posted by <a href="{{entry.authorUrl}}">{{entry.authorName}}</a> on {{ entry.published|date:"F jS Y H:i" }}
+    </p>
+    {{entry.body}}
+    
+    {% if blog_settings.disqusEnabled %}
+      {% if post_page %}
+      <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{{blog_settings.disqusBlogID}}/embed.js"></script><noscript><a href="http://{{blog_settings.disqusBlogID}}.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      {% else %}
+      <a href="/blog/posts/{{entry.key.id}}#disqus_thread">View Comments</a><br /><hr /><br />
+      {% endif %}
+    {% endif %}
+    
+    {% endfor %}
+    
+  </div>
+</div>
+  
+<div class="blog_sidebar">
+  <p>Powered by:</p>
+  <a href="http://code.google.com/p/blogmotor"><img src="/images/blog/blogmotor_logo.png" alt="BlogMotor" /></a></p>
+  <p>Some general words about this blog</p>
+  <a href="atom.xml" class="blog_subscribe"><img src="/images/subscribe.png" width="16" height="16" /> Subscribe</a>
+</div>
+
+  
+<div id="footer">
+  <p>Powered by <a href="http://code.google.com/p/blogmotor">BlogMotor</a></p>
+</div>
+<!-- Disqus embed code-->
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+		var links = document.getElementsByTagName('a');
+		var query = '?';
+		for(var i = 0; i < links.length; i++) {
+			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+			}
+		}
+		document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{{blog_settings.disqusBlogID}}/get_num_replies.js' + query + '"></' + 'script>');
+	})();
+//]]>
+</script>
+<!-- /disqus -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Blog Motor Admin</title>
+</head>
+<style>
+body {
+	font: 14px Tahoma, Helvetica, Arial, sans-serif;
+}
+</style>
+<body>
+    <h1>Blog Motor Admin</h1>
+    
+    <p><a href="/admin/blog/new/"><b>New Post</b></a> | <a href="/admin/blog/settings/">Settings</a></p>
+    
+    <table border="1">
+    <tr>
+      <th>Date</th><th>Title</th><th>Edit</th><th>Delete</th>
+    </tr>
+      {% for x in posts %}
+      <tr><td>{{x.updated|date:"m/d/Y H:i"}}</td><td><a href="/blog/posts/{{x.key.id}}">{{x.title|escape}}</a></td><td><a href="/admin/blog/edit/{{x.key.id}}">Edit</a></td><td><a href="/admin/blog/delete/{{x.key.id}}">Delete</a></td></tr>
+      {%endfor%}
+    </table>
+    <i>Powered by <a href="http://code.google.com/p/blog-motor/">Blog Motor</a></i>
+</body>
+</html>

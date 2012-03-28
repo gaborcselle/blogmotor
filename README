@@ -1,0 +1,15 @@
+Simple blog implementation on Google App Engine
+----
+
+If you have a site running on Google App Engine and you want to add a blog to it, this is a good place to start.
+
+This is a simple blog engine that you can add to your App Engine site. It's highly customizable due to its simplicity.
+
+This code is loosely based on this post: http://backchannel.org/blog/google-app-engine
+
+----
+
+Author: Gabor Cselle
+
+License: Apache License 2.0
+http://www.apache.org/licenses/LICENSE-2.0

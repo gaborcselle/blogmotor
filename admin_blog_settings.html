@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Blog Motor Settings</title>
+</head>
+<body>
+    <h1>Blog Motor Settings</h1>
+    <h3>TODO(gabor): This needs to actually work</h3>
+    <form action="/admin/blog/edit/" method="POST">
+    <table>
+    
+    <tr><td><strong>Blog Base URL</strong>:</td><td align="right"><input type="text" name="authorName" value="{{settings.blogUrl}}" size="30"/></td></tr>
+   <tr><td><strong>Blog Title</strong>:</td><td align="right"><input type="text" name="authorUrl" value="{{settings.blogTitle}}" size="30"/></td></tr>
+   <tr><td><strong>Blog Subtitle</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.blogSubitle}}" size="30"/></td></tr>
+   <tr><td><strong>Main Author Name</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.authorName}}" size="30"/></td></tr>
+   <tr><td><strong>Main Author URL</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.authorUrl}}" size="30"/></td></tr>
+   <tr><td><strong>Posts per page</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.postsPerPage}}" size="30"/></td></tr>
+   <tr><td><strong>Disqus enabled</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.disqusEnabled}}" size="30"/></td></tr>
+   <tr><td><strong>Disqus blog ID</strong>:</td><td align="right"><input type="text" name="title" value="{{settings.disqusBlogID}}" size="30"/></td></tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+application: blog-motor
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+#INSTALLATION: if you're adding BlogMotor to your own project, add the next 3 handlers below
+- url: /blog/.*
+  script: blogmotor.py
+  
+- url: /admin/blog/.*
+  script: blogmotor.py
+
+- url: /images/blog
+  static_dir: static/images/blog
+  secure: optional
+#INSTALLTION: that's it! continue with your own handlers
+  
+- url: .*
+  script: main.py

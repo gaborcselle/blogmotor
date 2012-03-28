@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Add Blog Post</title>
+</head>
+<body>
+    <h1>Add a Blog Post</h4>
+    <form action="/admin/blog/new/" method="POST">
+    <table>
+   <tr><td><strong>Author Name</strong>:</td><td align="right"><input type="text" name="authorName" size="30"/></td></tr>
+   <tr><td><strong>Author Url</strong>:</td><td align="right"><input type="text" name="authorUrl" size="30"/></td></tr>
+   <tr><td><strong>Title</strong>:</td><td align="right"><input type="text" name="title" size="30"/></td></tr>
+   <tr><td><strong>Body</strong></td></tr>
+   <tr><td colspan="2"><textarea name="body" cols="80" rows="20"></textarea></td></tr>
+   <tr><td colspan="2"><input type="submit" value="Submit" /></td></tr>
+</table>
+</form>
+    
+</body>
+</html>
